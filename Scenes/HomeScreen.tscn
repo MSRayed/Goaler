@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://duoyc7nmsdrr3"]
+
+[ext_resource type="PackedScene" uid="uid://1dsa5fqsqiir" path="res://Scenes/NewMatchPanel.tscn" id="1_j214x"]
+[ext_resource type="LabelSettings" uid="uid://d3acx0868vtwf" path="res://Resources/LabelSettings/Title1Settings.tres" id="1_o6i77"]
+[ext_resource type="Theme" uid="uid://dhmo3nhmr34qj" path="res://Resources/Themes/main_theme.tres" id="1_wbw56"]
+
+[node name="HomeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wbw56")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Contents" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 97
+
+[node name="Title" type="Label" parent="Contents"]
+offset_right = 1052.0
+offset_bottom = 99.0
+text = "Goaler"
+label_settings = ExtResource("1_o6i77")
+horizontal_alignment = 1
+
+[node name="NewMatchPanel" parent="Contents" instance=ExtResource("1_j214x")]
+anchors_preset = 0
+anchor_right = 0.0
+offset_top = 196.0
+offset_right = 1052.0
+offset_bottom = 368.0
+grow_horizontal = 1
+
+[node name="ScorelinesRecordButton" type="Button" parent="Contents"]
+offset_left = 441.0
+offset_top = 465.0
+offset_right = 610.0
+offset_bottom = 492.0
+size_flags_horizontal = 4
+theme_type_variation = &"AnchorButton"
+text = "See Scorelines Record"

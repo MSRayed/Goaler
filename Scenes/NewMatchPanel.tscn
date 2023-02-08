@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://1dsa5fqsqiir"]
+
+[ext_resource type="LabelSettings" uid="uid://bgsse1euvi6e3" path="res://Resources/LabelSettings/Title3Settings.tres" id="1_alq1a"]
+[ext_resource type="Theme" uid="uid://dhmo3nhmr34qj" path="res://Resources/Themes/main_theme.tres" id="1_ngrqp"]
+[ext_resource type="Script" path="res://Scripts/NewMatch.gd" id="2_d2scs"]
+
+[node name="NewMatchPanel" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme = ExtResource("1_ngrqp")
+theme_override_constants/separation = 40
+alignment = 1
+script = ExtResource("2_d2scs")
+score1_input = NodePath("Scoreline/Score1")
+score2_input = NodePath("Scoreline/Score2")
+scorelines_record_path = "res://Data/ScorelinesRecord.tres"
+
+[node name="NewMatch" type="Label" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 38.0
+grow_horizontal = 2
+text = "New Match"
+label_settings = ExtResource("1_alq1a")
+horizontal_alignment = 1
+
+[node name="Scoreline" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_top = 78.0
+offset_right = 1152.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="Score1" type="LineEdit" parent="Scoreline"]
+layout_mode = 2
+offset_left = 467.0
+offset_right = 534.0
+offset_bottom = 31.0
+alignment = 1
+
+[node name="vs" type="Label" parent="Scoreline"]
+layout_mode = 2
+offset_left = 567.0
+offset_top = 2.0
+offset_right = 584.0
+offset_bottom = 28.0
+text = "vs"
+
+[node name="Score2" type="LineEdit" parent="Scoreline"]
+layout_mode = 2
+offset_left = 617.0
+offset_right = 684.0
+offset_bottom = 31.0
+alignment = 1
+
+[node name="Enter" type="Button" parent="."]
+layout_mode = 2
+offset_left = 555.0
+offset_top = 149.0
+offset_right = 597.0
+offset_bottom = 172.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Enter"
+
+[connection signal="pressed" from="Enter" to="." method="_on_enter_pressed"]
